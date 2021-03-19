@@ -8,4 +8,11 @@ def first_page(request):
     })
 
 def thanks_page(request):
-    return render(request, './thanks_page.html')
+    name = request.GET['name']
+    phone = request.GET['phone']
+    # name = request.GET.get('name') # Alt
+    # phone = request.GET.get('phone') # Alt
+    return render(request, './thanks_page.html', {
+        'name': name,
+        'phone': phone
+    })
