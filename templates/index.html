@@ -15,7 +15,8 @@
 <h2>{{ obj.order_phone }}</h2>
 
 
-    <form action="{% url 'thanks_page' %}" method="">
+    <form action="{% url 'thanks_page' %}" method="POST">
+        {% csrf_token %} 
         <label>Имя</label>
         <input name="name">
         <label>Телефон</label>
