@@ -20,9 +20,21 @@ class Order(models.Model):
     def __str__(self):
         return self.order_name
 
-
     class Meta:
         verbose_name = 'Заказ'
         verbose_name_plural = 'Заказы'
+
+class CommentCrm(models.Model):
+    # К родительскому классу Order, используется удаление по CASCADE'у, если удалится родитель, значит удалится и comment_binding
+    comment_binding = models.ForeignKey(Order, on_delete=models.CASCADE, verbose_name='Заявка')
+    comment_text = models.TextField(verbose_name='Текст комментария')
+    comment_date = models.DateTimeField(auto_now=True, verbose_name='Дата создания')
+
+    def __str__(self):
+        return self.comment_text
+
+    class Meta:
+        verbose_name = 'Комментарий'
+        verbose_name_plural = 'Комментарии'
 
 
