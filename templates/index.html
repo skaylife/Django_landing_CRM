@@ -15,6 +15,18 @@
 <h2>{{ obj.order_phone }}</h2>
 
 
+    <form action="{% url 'thanks_page' %}">
+        <label>Имя</label>
+        <input name="name">
+        <label>Телефон</label>
+        <input name="phone">
+        <button type="submit">Отправить</button>
+    </form>
+
+
+
+{% if object_list %}
+
 
 <table border="1">
     <tr>
@@ -33,7 +45,10 @@
     {% endfor %}
 </table>
 
+{% else %}
+<h1>Данных нет</h1>
 
+{% endif %}
 
 </body>
 </html>
