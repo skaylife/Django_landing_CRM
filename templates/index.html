@@ -6,8 +6,34 @@
 </head>
 <body>
     <h1>Страница индекс</h1>
-<h1>{{ a }}</h1>
-<h2>{{ b }}</h2>
+<h1>{{ object_list }}</h1>
+
+
+
+<h2>ID = {{ obj.id }} | TIME ={{ obj.order_date_time }}</h2>
+<h2>{{ obj.order_name }}</h2>
+<h2>{{ obj.order_phone }}</h2>
+
+
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>DATE</th>
+        <th>ИМЯ</th>
+        <th>ТЕЛЕФОН</th>
+    </tr>
+ {% for obj in object_list %}
+    <tr>
+        <th>{{ obj.id }}</th>
+        <th>{{ obj.order_date_time }}</th>
+        <th>{{ obj.order_name }}</th>
+        <th>{{ obj.order_phone }}</th>
+    </tr>
+    {% endfor %}
+</table>
+
+
 
 </body>
 </html>
