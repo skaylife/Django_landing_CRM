@@ -31,7 +31,8 @@ def thanks_page(request):
     # phone = request.GET['phone'] # GET
     element = Order(order_name=name, order_phone=phone)
     element.save()
-    sendTelegram() #Отправка сообщения в telegram при переходе
+    # Отправка сообщения в telegram при переходе
+    sendTelegram(tg_name = name, tg_phone = phone)  # Передача переменных name и phone в функцию sendTelegram, для отправки содержания переменных в telegram и формирования POST запроса
     # name = request.GET.get('name') # Alt
     # phone = request.GET.get('phone') # Alt
     return render(request, './thanks.html', {
