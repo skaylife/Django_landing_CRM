@@ -25,7 +25,7 @@ SECRET_KEY = 'b07h3gllb6zb32*n2$_&(t%!%y^25%xt4vk=g3i3$-cw1f8psl'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://murmuring-island-83229.herokuapp.com', '.herokuapp.com']
 
 
 # Application definition
