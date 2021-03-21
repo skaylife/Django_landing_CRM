@@ -23,7 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'b07h3gllb6zb32*n2$_&(t%!%y^25%xt4vk=g3i3$-cw1f8psl'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+# DEBUG = False
+
 
 ALLOWED_HOSTS = ['127.0.0.1', 'djangocrmlanding.herokuapp.com']
 
@@ -144,3 +145,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+WHITENOISE_USE_FINDERS = True
+STATIC_ROOT = None
+
