@@ -19,8 +19,18 @@ from django.contrib import admin
 from django.urls import path
 from crm import views
 
+# Для HEROKU
+from django.views.static import serve
+from django.conf.urls import url
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.first_page),
-    path('thanks', views.thanks_page, name = 'thanks_page')
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path('thanks', views.thanks_page, name = 'thanks_page'),
+    # Для HEROKU
+    url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+    url(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
+  ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+

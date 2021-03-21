@@ -1,1 +1,1 @@
-web: gunicorn flower
+web: gunicorn landing.wsgi --log-file -
