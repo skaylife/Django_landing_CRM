@@ -15,7 +15,7 @@ AngularJS-powered HTML5 Markdown editor.
 - ✨Magic ✨
 - ✨Magic ✨
 - ✨Magic ✨
-- ✨Magic ✨
+
 
 
 ## Features
